@@ -16,7 +16,7 @@ Usen `git` para llevar la historia de cambios en la realización de sus notebook
 
 # Dinámica
 
-Dividir a su equipo para realizar cuatro tareas. **Ustedes deciden qué integrante resuelve qué tarea (algunas personas tendrán que hacer más de una tarea)**:
+Dividir a su equipo para realizar cuatro tareas. **Ustedes deciden qué integrante resuelve qué tarea**:
 
 1. 1 persona que defina cuáles son los parámetros que existen en su problema de optimización y en su método numérico. Ya definidos debe utilizarlos para construir y lanzar pipelines con [Kale](https://github.com/kubeflow-kale/kale) y monitorearlos con el dashboard de [Kubeflow](https://github.com/kubeflow/kubeflow). 
 
