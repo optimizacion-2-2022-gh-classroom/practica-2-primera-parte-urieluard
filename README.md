@@ -59,13 +59,17 @@ practica-2-primera-parte-urieluard:
 ## ¿Qué lenguajes y paqueterías utlizamos?
 
 <img src="images/minikube.jpeg" width="270" height="100" />
+
 [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 
+
 <img src="images/kubeflow.png" width="270" height="100" />
+
 [kubeflow](https://www.kubeflow.org/)
 
 
 <img src="images/kale_logo.png" width="270" height="100" />
+
 [kubeflow-kale](https://github.com/kubeflow-kale/kale)
 
 ---
