@@ -26,9 +26,9 @@
 |     ***Integrante***      |             ***Usuario de GitHub***             |  ***Rol asignado***        |                       
 |:-------------------------:|:-----------------------------------------------:|:--------------------------:|
 |  Ita                      |    [sancas96](https://github.com/sancas96)      | Equipo de Programación     | 
-|  Luz                      |    [LuzVerde23](https://github.com/LuzVerde23)  | Administrador de proyecto  | 
+|  Luz                      |    [LuzVerde23](https://github.com/LuzVerde23)  | Equipo de Programación     | 
 |  Edgar                    |    [EddOselotl](https://github.com/EddOselotl)  | Equipo de Programación     | 
-|  Uriel                    |    [urieluard](https://github.com/urieluard)    | Equipo de Programación     | 
+|  Uriel                    |    [urieluard](https://github.com/urieluard)    | Administrador del proyecto | 
 
 ---    
 
