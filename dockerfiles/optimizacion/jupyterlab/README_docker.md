@@ -37,6 +37,6 @@ docker stop $CONTAINER_NAME
 ```
 
 ## Referencias
-* [1] [video](https://youtu.be/wv7JGstFgrU) Construcción de una imagen de dockeR
+* [1] [video](https://youtu.be/wv7JGstFgrU) Construcción de una imagen de Docker
 * [2] [DOCKER DEFAULT PLATFORM](https://stackoverflow.com/questions/65612411/forcing-docker-to-use-linux-amd64-platform-by-default-on-macos)
 * [3] [https://github.com/palmoreck/dockerfiles](https://github.com/palmoreck/dockerfiles)
