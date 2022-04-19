@@ -18,6 +18,9 @@ Build:
 
 ```
 docker build $BUILD_DIR -t $CONTAINER_NAME
+```
+
+```
 DOCKER_DEFAULT_PLATFORM=linux/amd64 docker build $BUILD_DIR -t $CONTAINER_NAME # amd64 image/container.
 ```
 
