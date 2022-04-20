@@ -1,10 +1,9 @@
 #dummy line to trigger build
 FROM palmoreck/kale_certs:0.6.1
 USER root
+ENV PIP_PACKAGES="numpy scipy pandas matplotlib pytest networkx MaxFlowAeiu==0.1.1"
 
-
-COPY requirements.txt .
-RUN pip3 install --requirement requirements.txt
+RUN pip3 install $PIP_PACKAGES
 RUN pip install --quiet "git+https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-LuzVerde23.git#egg=MaxFlowAeiu&subdirectory=src"
 
 VOLUME ["/shared_volume"]
