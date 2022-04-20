@@ -1,5 +1,5 @@
-#dummy line to trigger build
-FROM sancas96/docker_t3:0.1
+FROM palmoreck/kale_certs:0.6.1
+
 USER root
 
 RUN pip install --quiet "git+https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-LuzVerde23.git#egg=MaxFlowAeiu&subdirectory=src"
