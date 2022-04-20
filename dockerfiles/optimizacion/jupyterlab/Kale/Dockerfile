@@ -4,35 +4,30 @@ ENV TIMEZONE America/Mexico_City
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
-ENV DEB_PACKAGES="sudo nano less time git curl wget htop graphviz gfortran libopenblas-dev"
+ENV DEB_BUILD_DEPS="python3-dev python3-pip python3-setuptools"
+ENV DEB_PACKAGES="sudo nano less git wget curl ca-certificates"
+ENV PIP_PACKAGES_COMMON="numpy scipy pandas matplotlib pytest networkx MaxFlowAeiu==0.1.1"
 ENV PIP_PACKAGES_KALE="kubeflow-kale==0.6.1"
-#
-#install app debian
+ENV JUPYTERLAB="jupyter-client==5.3.4 jupyterlab==2.3.2 qtconsole==5.2.1 nbconvert==5.6.1 jupyter-console==6.4.0 ipykernel==6.6.0 MarkupSafe==2.0.1"
+
 RUN apt-get update && export $DEBIAN_FRONTEND && \
     echo $TIMEZONE > /etc/timezone && apt-get install -y tzdata
 
-#install python
-RUN apt-get update && apt-get install -y $DEB_BUILD_DEPS $DEB_PACKAGES && pip3 install --upgrade pip
+RUN apt-get update && apt-get install -y $DEB_PACKAGES $DEB_BUILD_DEPS && pip3 install --upgrade pip
 
-# Install nodejs deps
 RUN curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash - && apt-get install -y nodejs
 
-RUN pip3 install jupyter "jupyterlab>=2.0.0,<3.0.0" --upgrade
+RUN pip3 install $JUPYTERLAB
 
-# excecute jypyter and set user and pass
 RUN jupyter notebook --generate-config && \
-    sed -i "s/# c.NotebookApp.password = .*/c.NotebookApp.password = u'sha1:115e429a919f:21911277af52f3e7a8b59380804140d9ef3e2380'/" ~/.jupyter/jupyter_notebook_config.py
+    sed -i "s/# c.NotebookApp.password = .*/c.NotebookApp.password = u'sha1:115e429a919f:21911277af52f3e7a8b59380804140d9ef3e2380'/" ~/.jupyter/jupyter_notebook_config.py && \
+    sed -i "s/# c.NotebookApp.certfile = .*/c.NotebookApp.certfile = u'\/shared_volume\/certs\/cert.pem'/" ~/.jupyter/jupyter_notebook_config.py && \
+    sed -i "s/# c.NotebookApp.keyfile = .*/c.NotebookApp.keyfile = u'\/shared_volume\/certs\/privkey.key'/" ~/.jupyter/jupyter_notebook_config.py
 
-#install python package
-RUN pip install $PIP_PACKAGES_KALE --upgrade
 
-RUN jupyter labextension install kubeflow-kale-labextension --minimize=False
-
-COPY requirements.txt .
-RUN pip3 install --requirement requirements.txt
-COPY . .
-
-RUN git clone https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-LuzVerde23.git
+RUN pip3 install $PIP_PACKAGES_COMMON
+RUN pip3 install $PIP_PACKAGES_KALE
+RUN jupyter labextension install kubeflow-kale-labextension@0.6.1
 
 VOLUME ["/shared_volume"]
 
