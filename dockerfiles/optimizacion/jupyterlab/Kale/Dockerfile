@@ -6,7 +6,7 @@ ENV LC_ALL C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEB_PACKAGES="sudo nano less time git curl wget htop graphviz gfortran libopenblas-dev"
 ENV PIP_PACKAGES_KALE="kubeflow-kale==0.6.1"
-
+#
 #install app debian
 RUN apt-get update && export $DEBIAN_FRONTEND && \
     echo $TIMEZONE > /etc/timezone && apt-get install -y tzdata
