@@ -28,7 +28,6 @@ RUN jupyter notebook --generate-config && sed -i "s/# c.NotebookApp.password = .
 #install python package
 RUN pip3 install $PIP_PACKAGES_COMMON
 RUN pip install $PIP_PACKAGES_KALE --upgrade
-RUN pip3 install git+https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard
 RUN jupyter labextension install kubeflow-kale-labextension --minimize=False
 
 
