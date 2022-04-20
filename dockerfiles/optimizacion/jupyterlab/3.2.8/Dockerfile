@@ -28,8 +28,9 @@ RUN jupyter notebook --generate-config && sed -i "s/# c.NotebookApp.password = .
 #install python package
 RUN pip3 install $PIP_PACKAGES_COMMON
 RUN pip install $PIP_PACKAGES_KALE --upgrade
-RUN jupyter labextension install kubeflow-kale-labextension --minimize=False
+RUN pip install --quiet "git+https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-LuzVerde23.git#egg=build&subdirectory=src"
 
+RUN jupyter labextension install kubeflow-kale-labextension --minimize=False
 
 VOLUME ["/shared_volume"]
 
