@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM palmoreck/kale_certs:0.6.1
 USER root
 ENV TIMEZONE America/Mexico_City
 ENV LANG C.UTF-8
