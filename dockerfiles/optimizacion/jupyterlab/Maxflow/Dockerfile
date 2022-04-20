@@ -1,4 +1,4 @@
-FROM palmoreck/kale_certs:0.6.1
+FROM sancas96/docker_kale:0.1
 
 USER root
 
