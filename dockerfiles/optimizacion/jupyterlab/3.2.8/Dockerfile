@@ -23,7 +23,7 @@ RUN curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash - && apt-get i
 RUN pip3 install $JUPYTERLAB
 
 # excecute jypyter and set user and pass
-RUN jupyter notebook --generate-config && sed -i "s/# c.NotebookApp.password = .*/c.NotebookApp.password = u'sha1:115e429a919f:21911277af52f3e7a8b59380804140d9ef3e2380'/" ~/.jupyter/jupyter_notebook_config.py
+RUN jupyter notebook --generate-config && sed -i "s/# c.NotebookApp.password = .*/c.NotebookApp.password = u'argon2:$argon2id$v=19$m=10240,t=10,p=8$kBp0QxfAM7bZzj/ALm9EHw$zk+f5EV8SWTb3cdgq5BwOoi1sIpavNCkwYEb3Urgi6Y'/" ~/.jupyter/jupyter_notebook_config.py
 
 #install python package
 RUN pip3 install $PIP_PACKAGES_COMMON
