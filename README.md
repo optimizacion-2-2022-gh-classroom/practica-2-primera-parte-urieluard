@@ -53,6 +53,8 @@ practica-2-primera-parte-urieluard:
  |
  ├── src                                         <- Archivos y estructura de carpetas necesarias para el paquete
  │
+ ├── notebooks_apoyo                             <- Notebooks de apoyo al proyecto
+ │
  └── images                                      <- Contiene las imágenes utilizadas en el repositorio.
 ``` 
 
