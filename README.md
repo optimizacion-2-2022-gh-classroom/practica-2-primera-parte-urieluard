@@ -15,7 +15,7 @@
 
 5. [Ambientes en Contenedor](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard#ambientes-en-contenedor)
 
-6. [Instancia de AWS](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard#ambientes-en-contenedor)
+6. [Instancia de AWS](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard#instancia-de-aws)
 
 7. [Resultados obtenidos](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard#resultados-obtenidos)
     
@@ -91,13 +91,13 @@ De igual forma, en este repositorio se cuenta con un archivo de Docker (Docker F
 <p align = "center">
     <img src="images/Docker-Logo.png" width="300" height="110" />
 
-Las imágenes de Docker que se utilizaron de referencia para esta práctica se tomaron de [1](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard#referencias)
+Las imágenes de Docker que se utilizaron de referencia para esta práctica se tomaron de [-1-](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard#referencias)
 
 ---
 
 ## Instancia de AWS
 
-Se creó una instancia de AWS con la configuración mostrada en [2](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard#referencias) para correr el pipeline de nuestro programa y validar que las pruebas realizadas fueron ejecutadas correctamente.
+Se creó una instancia de AWS con la configuración mostrada en [-2-](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard#referencias) para correr el pipeline de nuestro programa y validar que las pruebas realizadas fueron ejecutadas correctamente.
 
 <p align = "center">
     <img src="images/aws.png" width="300" height="110" />
@@ -109,7 +109,7 @@ Se creó una instancia de AWS con la configuración mostrada en [2](https://gith
 El Pipeline final, después de las pruebas realizadas conforme se reporta en el archivo: _reporte_equipo_2_parte_1_practica_2.ipynb_, se muestra a continuación:
 
 <p align = "center">
-    <img src="images/ejemplo4.png" width="300" height="110" />
+    <img src="images/ejemplo4.png" width="900" height="530" />
 
 La tabla de resultados siguiente reporta el comportamiento del algoritmo implementado en las pruebas realizadas:
 
@@ -119,5 +119,6 @@ La tabla de resultados siguiente reporta el comportamiento del algoritmo impleme
 
 ## Referencias
 
-[1] Erick Palacios Moreno -ITAM [Repositorio: dockerfiles](https://github.com/palmoreck/dockerfiles/tree/master/jupyterlab/kale/general/certs/0.6.1)
+[1] Dockerfiles, Erick Palacios Moreno -ITAM [(liga al repositorio)](https://github.com/palmoreck/dockerfiles/tree/master/jupyterlab/kale/general/certs/0.6.1)
+    
 [2] Wiki del repositorio de la materia de Análisis Numérico y Computo Científico (Erick Palacios Moreno -ITAM) [(liga al repositorio)](https://github.com/ITAM-DS/analisis-numerico-computo-cientifico/wiki/6.Minikube-y-AWS)
