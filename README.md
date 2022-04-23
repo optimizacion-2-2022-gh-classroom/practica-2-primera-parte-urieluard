@@ -121,4 +121,4 @@ La tabla de resultados siguiente reporta el comportamiento del algoritmo impleme
 
 [1] Dockerfiles, Erick Palacios Moreno -ITAM [(liga al repositorio)](https://github.com/palmoreck/dockerfiles/tree/master/jupyterlab/kale/general/certs/0.6.1)
     
-[2] Wiki del repositorio de la materia de Análisis Numérico y Computo Científico (Erick Palacios Moreno -ITAM) [(liga al repositorio)](https://github.com/ITAM-DS/analisis-numerico-computo-cientifico/wiki/6.Minikube-y-AWS)
+[2] Wiki del repositorio de la materia de Análisis Numérico y Computo Científico, Erick Palacios Moreno -ITAM [(liga al repositorio)](https://github.com/ITAM-DS/analisis-numerico-computo-cientifico/wiki/6.Minikube-y-AWS)
