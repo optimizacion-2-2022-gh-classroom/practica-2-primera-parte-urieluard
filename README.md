@@ -15,9 +15,11 @@
 
 5. [Ambientes en Contenedor](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard#ambientes-en-contenedor)
 
-6. [Resultados obtenidos](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard#resultados-obtenidos)
+6. [Instancia de AWS](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard#ambientes-en-contenedor)
+
+7. [Resultados obtenidos](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard#resultados-obtenidos)
     
-7. [Referencias](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard#referencias)
+8. [Referencias](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard#referencias)
     
 ---
 
@@ -34,9 +36,9 @@
 
 ## Acerca de este proyecto
     
-Esta práctica se enfoca en el uso de Minikube, Kubeflow y Kale para construcción y lanzamiento de pipelines de procesamiento y experimentación del paquete construído en el [ejercicio 1](https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-LuzVerde23) para resolver el problema de flujo máximo con el algoritmo de Ford-Fulkerson.
+Esta práctica se enfoca en el uso de Minikube, Kubeflow y Kale para construcción y lanzamiento de pipelines de procesamiento y experimentación del paquete construído en la parte II de la práctica 1 [(consultar aquí)](https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-LuzVerde23) para resolver el problema de flujo máximo con el algoritmo de Ford-Fulkerson.
 
-El objetivo es realizar experimentos con las herramientas de Minikube, kubeflow y Kale para detectar con qué valores no funcionan el programa implementado en el ejercicio 1. Para elllo se cambian algunos parámetros del programa y se hacen pruebas con diferentes redes.
+El objetivo es realizar experimentos con las herramientas de Minikube, kubeflow y Kale para reportar el funcionamiento del programa implementado en la parte II de la práctica 1. Para elllo se se hacen pruebas con diferentes redes: con tamaños y conectividad diferentes (redes de pequeña y mediana escala), algunas de representaciones documentadas y otras de redes generadas de forma aleatoria.
  
 ## Estructura básica del repositorio
 
@@ -49,9 +51,7 @@ practica-2-primera-parte-urieluard:
  |
  ├── BD                                          <- Bases de datos utilizadas para comprobar el método
  │
- ├── Dockerfiles                                 <- Carpeta con archivo de Docker que crea la imágen del entorno para la ejecución del método
- |
- ├── src                                         <- Archivos y estructura de carpetas necesarias para el paquete
+ ├── dockerfiles                                 <- Carpeta con archivo de Docker que crea la imágen del entorno para la ejecución del método
  │
  ├── notebooks_apoyo                             <- Notebooks de apoyo al proyecto
  │
@@ -80,23 +80,44 @@ practica-2-primera-parte-urieluard:
 
 ### Binder
 
-En el siguiente botón se realiza el lanzamiento de un ambiente ejeutable donde se podrá interactuar con el paquete realizado (**MaxFlowAeiu**)
+En el siguiente botón se realiza el lanzamiento de un ambiente ejeutable donde se podrá interactuar con el paquete realizado (**MaxFlowAeiu**) y se ejecuta el notebook del reporte.
     
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-LuzVerde23/main?labpath=reporte_equipo_2_parte_2_practica_1.ipynb)
 
 ### Docker
 
-De igual forma, en este repositorio se cuenta con un archivo de Docker para crear el contenedor que contiene todas las librerías y el paquete creado para que pueda ser utilizado desde [Docker](https://www.docker.com/).
+De igual forma, en este repositorio se cuenta con un archivo de Docker (Docker File) para crear una imagen del contenedor con las librerías y el paquete MaxFlowAeiu para que pueda ser utilizado desde [Docker](https://www.docker.com/).
 
 <p align = "center">
     <img src="images/Docker-Logo.png" width="300" height="110" />
 
+Las imágenes de Docker que se utilizaron de referencia para esta práctica se tomaron de [1](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard#referencias)
+
+---
+
+## Instancia de AWS
+
+Se creó una instancia de AWS con la configuración mostrada en [2](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard#referencias) para correr el pipeline de nuestro programa y validar que las pruebas realizadas fueron ejecutadas correctamente.
+
+<p align = "center">
+    <img src="images/aws.png" width="300" height="110" />
+
 ---
 
 ## Resultados obtenidos
+
+El Pipeline final, después de las pruebas realizadas conforme se reporta en el archivo: _reporte_equipo_2_parte_1_practica_2.ipynb_, se muestra a continuación:
+
+<p align = "center">
+    <img src="images/ejemplo4.png" width="300" height="110" />
+
+La tabla de resultados siguiente reporta el comportamiento del algoritmo implementado en las pruebas realizadas:
 
 
 
 ---
 
 ## Referencias
+
+[1] Erick Palacios Moreno -ITAM [Repositorio: dockerfiles](https://github.com/palmoreck/dockerfiles/tree/master/jupyterlab/kale/general/certs/0.6.1)
+[2] Wiki del repositorio de la materia de Análisis Numérico y Computo Científico (Erick Palacios Moreno -ITAM) [(liga al repositorio)](https://github.com/ITAM-DS/analisis-numerico-computo-cientifico/wiki/6.Minikube-y-AWS)
