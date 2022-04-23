@@ -53,7 +53,7 @@ practica-2-primera-parte-urieluard:
  │
  ├── dockerfiles                                 <- Carpeta con archivo de Docker que crea la imágen del entorno para la ejecución del método
  │
- ├── notebooks_apoyo                             <- Notebooks de apoyo al proyecto
+ ├── notebooks_apoyo                             <- Notebooks de apoyo al proyecto (Aquí se encuentra el NB taggeado para uso con Minikube, Kubeflow y Kale)
  │
  └── images                                      <- Contiene las imágenes utilizadas en el repositorio.
 ``` 
@@ -111,7 +111,8 @@ El Pipeline final, después de las pruebas realizadas conforme se reporta en el 
 <p align = "center">
     <img src="images/ejemplo4.png" width="900" height="530" />
 
-La tabla de resultados siguiente reporta el comportamiento del algoritmo implementado en las pruebas realizadas:
+
+**Nota:** El _Notebook_ que contiene las celdas _taggeadas_ para los lanzamientos de pipelines con _Minikube, Kubeflow y Kale_ se encientra [aquí](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard/blob/main/notebooks_apoyo/reporte_equipo_2_parte_1_practica_2_kale.ipynb)
 
 
 
