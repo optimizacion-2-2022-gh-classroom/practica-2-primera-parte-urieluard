@@ -60,7 +60,8 @@ G_n2 = nx.from_numpy_matrix(prueba, create_using=nx.DiGraph())
 fv_n2, flow_dict_p1 = nx.maximum_flow(G_n2, source2, sink2, capacity='weight')
 
 # scipy
-G_s2 = csr_matrix(prueba)
+arr_sci2=prueba.astype(int)
+G_s2 = csr_matrix(arr_sci2)
 fv_s2=maximum_flow(G_s2, source2, sink2).flow_value
 
 #MaxFlowAeiu
