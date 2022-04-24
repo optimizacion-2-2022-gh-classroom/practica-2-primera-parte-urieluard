@@ -118,6 +118,18 @@ El Pipeline final, después de las pruebas realizadas conforme se reporta en el 
 
 ---
 
+## Documentación del paquete
+
+La documentación del paquete realizado se hizo con [Sphinx](https://www.sphinx-doc.org/en/master/) y se puede consultar en este [link](https://optimizacion-2-2022-gh-classroom.github.io/practica-2-primera-parte-urieluard/index.html).
+
+<p align = "center">
+    <img src="images/sphinxheader.png" width="300" height="110" />
+
+Para poder consultar el paquete en 
+[Pypi](https://pypi.org/project/MaxFlowAeiu/)     
+
+---
+
 ## Referencias
 
 [1] Dockerfiles, Erick Palacios Moreno -ITAM [(liga al repositorio)](https://github.com/palmoreck/dockerfiles/tree/master/jupyterlab/kale/general/certs/0.6.1)
