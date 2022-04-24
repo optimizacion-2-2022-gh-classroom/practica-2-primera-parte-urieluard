@@ -2,7 +2,7 @@
 FROM palmoreck/kale_certs:0.6.1
 USER root
 
-RUN pip install --quiet "git+https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-LuzVerde23.git#egg=MaxFlowAeiu&subdirectory=src"
+RUN pip install --quiet "git+https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard.git#egg=MaxFlowAeiu&subdirectory=src"
 
 VOLUME ["/shared_volume"]
 
