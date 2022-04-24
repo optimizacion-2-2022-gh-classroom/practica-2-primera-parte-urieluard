@@ -110,7 +110,7 @@ En este [video](https://youtu.be/7PrB_GSo8Wg) puede observarse el procedimiento 
 El Pipeline final, después de las pruebas realizadas conforme se reporta en el archivo: _reporte_equipo_2_parte_1_practica_2.ipynb_, se muestra a continuación:
 
 <p align = "center">
-    <img src="images/ejemplo4.png" width="900" height="530" />
+    <img src="images/LAHM_kale_ec2-44-204-141-137.png" width="900" height="530" />
 
 
 **Nota:** El _Notebook_ que contiene las celdas _taggeadas_ para los lanzamientos de pipelines con _Minikube, Kubeflow y Kale_ se encientra [aquí](https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard/blob/main/notebooks_apoyo/reporte_equipo_2_parte_1_practica_2_kale.ipynb)
