@@ -2,7 +2,11 @@
 FROM palmoreck/kale_certs:0.6.1
 USER root
 
-RUN pip install --quiet "git+https://github.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard.git#egg=MaxFlowAeiu&subdirectory=src"
+ENV PIP_PACKAGES_COMMON="MaxFlowAeiu==0.1.2 pytest networkx"
+
+RUN pip3 install $PIP_PACKAGES_COMMON
+RUN pip3 install numpy --upgrade
+
 
 VOLUME ["/shared_volume"]
 
