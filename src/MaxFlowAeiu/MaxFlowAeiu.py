@@ -18,11 +18,11 @@ class MaxFlowAeiu:
                                   of the edges are updated after 
                                   each iteration.
         '''
-        self.graph = graph
+        self.graph = graph.copy()
         self.N = len(graph)
         self.source = 0      
         self.sink= self.N-1
-        self.residualgraph = self.graph
+        self.residualgraph = self.graph.copy()
     
     def busq_anchura(self,source,sink,parent): 
         '''
