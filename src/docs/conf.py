@@ -24,9 +24,9 @@ copyright = '2022, Equipo2 Optimizacion2'
 author = 'Equipo2'
 
 # The short X.Y version
-version = ''
+version = '0.1.2'
 # The full version, including alpha/beta/rc tags
-release = '0.2'
+release = '0.1.2'
 
 
 # -- General configuration ---------------------------------------------------
