@@ -25,8 +25,8 @@ flow_value_nx, flow_dict = nx.maximum_flow(G, source1, sink1, capacity='weight')
 
 #Resolvemos usando scipy
 #arr_sci = d.to_numpy()
-arr_sci=arr_net.astype(int)
-graph = csr_matrix(arr_sci)
+#arr_sci=arr_net.astype(int)
+graph = csr_matrix(arr_net)
 flow_value_sp=maximum_flow(graph, source1, sink1).flow_value
 
 #MaxFlowAeiu
@@ -58,7 +58,7 @@ sink2= 12
 
 # networkx
 G_n2 = nx.from_numpy_matrix(prueba, create_using=nx.DiGraph())
-fv_n2, flow_dict_p1 = nx.maximum_flow(G_e2, source2, sink2, capacity='weight')
+fv_n2, flow_dict_p1 = nx.maximum_flow(G_n2, source2, sink2, capacity='weight')
 
 # scipy
 G_s2 = csr_matrix(prueba)
@@ -68,6 +68,49 @@ fv_s2=maximum_flow(G_s2, source2, sink2).flow_value
 arr_max2 = d2.copy()
 MF_2 = MaxFlowAeiu(arr_max2)
 fv_mf2=MF_2.ford_fulkerson()
+
+
+#ejemplo 3
+d3=pd.read_csv("https://raw.githubusercontent.com/sid-7/Airline_Maximum_Flow/master/flights.csv")
+d3=d3.drop(['Unnamed: 0', 'Depature', 'Arrival'], axis=1)
+d3=d3.groupby(['Source', 'Destination'], as_index=False)['capacity'].sum()
+d3['capacity'] = pd.to_numeric(d3['capacity'], errors='coerce')
+new_row = pd.DataFrame([['JFK','JFK', 0], ['LAX','LAX', 0]],
+                   columns=['Source', 'Destination', 'capacity'])
+d3 = pd.concat([d3, new_row])
+d3 = d3.pivot(index="Source", columns="Destination", values="capacity").fillna(0)
+column_to_move1 = d3.pop("LAX")
+column_to_move2 = d3.pop("JFK")
+d3.insert(0, "LAX", column_to_move1)
+d3.insert(9, "JFK", column_to_move2)
+t1 = ['JFK','LAX']
+t2 = ['JFK']
+t3 = ['LAX']
+
+a = d3.loc[[i for i in d3.index if i not in t1], :]
+b = d3.loc[t2, :]
+c = d3.loc[t3, :]
+
+d3=pd.concat([c, a, b])
+
+arr_net3 = d.to_numpy()
+source3 = 0      
+sink3= len(arr_net3)-1
+
+
+# networkx
+G_n3 = nx.from_numpy_matrix(arr_net3, create_using=nx.DiGraph())
+fv_n3, flow_dict_p1 = nx.maximum_flow(G_n3, source2, sink2, capacity='weight')
+
+# scipy
+G_s3 = csr_matrix(arr_net3)
+fv_s3=maximum_flow(G_s3, source3, sink3).flow_value
+
+#MaxFlowAeiu
+arr_max3 = d3.values.tolist().copy()
+MF_3 = MaxFlowAeiu(arr_max3)
+fv_mf3=MF_3.ford_fulkerson()
+
 
 
 
@@ -86,3 +129,11 @@ def test_vals_3():
 
 def test_vals_4():
     assert(fv_s2 == fv_mf2)
+
+
+#ejemplo 3 testresult
+def test_vals_5():
+    assert(fv_n3 == fv_mf3)
+
+def test_vals_6():
+    assert(fv_s3 == fv_mf3)
