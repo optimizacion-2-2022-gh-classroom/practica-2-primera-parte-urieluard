@@ -163,7 +163,7 @@ def test_vals_6():
     assert(fv_s3 == fv_mf3)
 
 
-#ejemplo 3 testresult
+#ejemplo 4 testresult prueba test
 def test_vals_7():
     assert(fv_n4 == fv_mf4)
 
