@@ -102,6 +102,7 @@ Se creó una instancia de AWS con la configuración mostrada en [-2-](https://gi
 <p align = "center">
     <img src="images/aws.png" width="300" height="110" />
 
+En este [video](https://youtu.be/7PrB_GSo8Wg) puede observarse el procedimiento y la ejecución del _pipeline_ desde la creación de la instancia de AWS.
 ---
 
 ## Resultados obtenidos
