@@ -1,12 +1,12 @@
 import pandas as pd
 import networkx as nx
-import random
 import networkx as nx
 from networkx.algorithms.flow import maximum_flow
 from scipy.sparse import csr_matrix
 from scipy.sparse.csgraph import maximum_flow
 from MaxFlowAeiu import MaxFlowAeiu
 import numpy as np
+from gen_red import gen_red
 
 
 #ejemplo 1
@@ -91,15 +91,14 @@ b = d3.loc[t2, :]
 c = d3.loc[t3, :]
 
 d3=pd.concat([c, a, b])
-
-arr_net3 = d.to_numpy()
+arr_net3 = d3.to_numpy()
 source3 = 0      
 sink3= len(arr_net3)-1
 
 
 # networkx
 G_n3 = nx.from_numpy_matrix(arr_net3, create_using=nx.DiGraph())
-fv_n3, flow_dict_p1 = nx.maximum_flow(G_n3, source2, sink2, capacity='weight')
+fv_n3, flow_dict_p1 = nx.maximum_flow(G_n3, source3, sink3, capacity='weight')
 
 # scipy
 arr_sci3=arr_net3.astype(int)
@@ -111,6 +110,31 @@ arr_max3 = d3.values.tolist().copy()
 MF_3 = MaxFlowAeiu(arr_max3)
 fv_mf3=MF_3.ford_fulkerson()
 
+
+
+
+#ejemplo 4 
+n = 1000
+m = 5000
+d4 = gen_red(n,m)
+
+arr_net4 = d4.to_numpy()
+source4 = 0      
+sink4= len(arr_net4)-1
+
+# networkx
+G_n4 = nx.from_numpy_matrix(arr_net4, create_using=nx.DiGraph())
+fv_n4, flow_dict_p1 = nx.maximum_flow(G_n4, source4, sink4, capacity='weight')
+
+# scipy
+arr_sci4=arr_net4.astype(int)
+G_s4 = csr_matrix(arr_sci4)
+fv_s4=maximum_flow(G_s4, source4, sink4).flow_value
+
+#MaxFlowAeiu
+arr_max4 = d4.values.tolist().copy()
+MF_4 = MaxFlowAeiu(arr_max4)
+fv_mf4=MF_4.ford_fulkerson()
 
 
 
@@ -137,3 +161,11 @@ def test_vals_5():
 
 def test_vals_6():
     assert(fv_s3 == fv_mf3)
+
+
+#ejemplo 3 testresult
+def test_vals_7():
+    assert(fv_n4 == fv_mf4)
+
+def test_vals_8():
+    assert(fv_s4 == fv_mf4)
