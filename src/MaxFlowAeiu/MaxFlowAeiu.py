@@ -118,6 +118,28 @@ class MaxFlowAeiu:
             maximum_flow += path_flow  
             
         return maximum_flow
+    
+    # metodo para obtener información del grafo
+    def infoMF(self):
+        '''
+        Obtains the information of the graph, regarding to the number of nodes and arcs
+        Args:
+            grapf (matrix): defines the graph from a matrix.
+        Returns:
+            Printed info of the graph.
+            
+        '''
+        # Función para contar nodos y ramas
+        rama = 0
+        arreglo = self.graph
+        for i in range(len(arreglo)):
+            for m in range(len(arreglo[i])):
+                if arreglo[i][m] == 0:
+                    pass
+                else:
+                    rama = rama + 1
+        print("nodos",len(arreglo))
+        print("ramas",rama)
         
     
     
