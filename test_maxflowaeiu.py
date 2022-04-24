@@ -11,8 +11,7 @@ import numpy as np
 
 #ejemplo 1
 #datos
-url_d = "https://raw.githubusercontent.com/optimizacion-2-2022-gh-classroom/practica-2-primera-parte-urieluard/main/BD/d.csv"
-d = pd.read_csv(url_d,header=None)
+d = pd.read_csv('BD/d.csv',header=None)
 
 arr_net = d.to_numpy()
 source1 = 0      
@@ -25,8 +24,8 @@ flow_value_nx, flow_dict = nx.maximum_flow(G, source1, sink1, capacity='weight')
 
 #Resolvemos usando scipy
 #arr_sci = d.to_numpy()
-#arr_sci=arr_net.astype(int)
-graph = csr_matrix(arr_net)
+arr_sci=arr_net.astype(int)
+graph = csr_matrix(arr_sci)
 flow_value_sp=maximum_flow(graph, source1, sink1).flow_value
 
 #MaxFlowAeiu
@@ -71,7 +70,7 @@ fv_mf2=MF_2.ford_fulkerson()
 
 
 #ejemplo 3
-d3=pd.read_csv("https://raw.githubusercontent.com/sid-7/Airline_Maximum_Flow/master/flights.csv")
+d3=pd.read_csv("BD/flights.csv")
 d3=d3.drop(['Unnamed: 0', 'Depature', 'Arrival'], axis=1)
 d3=d3.groupby(['Source', 'Destination'], as_index=False)['capacity'].sum()
 d3['capacity'] = pd.to_numeric(d3['capacity'], errors='coerce')
@@ -103,7 +102,8 @@ G_n3 = nx.from_numpy_matrix(arr_net3, create_using=nx.DiGraph())
 fv_n3, flow_dict_p1 = nx.maximum_flow(G_n3, source2, sink2, capacity='weight')
 
 # scipy
-G_s3 = csr_matrix(arr_net3)
+arr_sci3=arr_net3.astype(int)
+G_s3 = csr_matrix(arr_sci3)
 fv_s3=maximum_flow(G_s3, source3, sink3).flow_value
 
 #MaxFlowAeiu
